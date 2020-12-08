@@ -1,0 +1,42 @@
+---
+title: 'My Bioconductor Topic'
+subtitle: 'Bioconductor Meeting'
+author: '[Author](https://author.github.io)'
+institute: ''
+date: 'YYYY-MM-DD'
+output:
+  xaringan::moon_reader:
+    css: [default, metropolis, useR-fonts, "mycss.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+# knit: pagedown::chrome_print
+---
+
+layout: true
+
+<div class="my-header"><img src="img/logo.png" alt="logo" align="right" height="90%"></div>
+
+<div class="my-footer"><span>
+@polcastellano_
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!--&emsp;&emsp;&emsp;&emsp;&emsp;-->
+POMA R/Bioconductor package
+</span></div>
+
+```{r setup, include = FALSE}
+stopifnot(require(htmltools))
+stopifnot(require(knitr))
+```
+
+```{r htmltools, include = FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+---
+
+# Title
+
+Content.
+
