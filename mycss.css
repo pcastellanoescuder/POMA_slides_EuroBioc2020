@@ -1,4 +1,15 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+h1, h2, h3 {
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 div.my-header {
   position: fixed;
   top: 0px;
@@ -6,7 +17,6 @@ div.my-header {
   height: 80px;
   width: 100%;
   background-color: #336B87;
-  /*background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);*/
 }
 
 div.my-header img {
@@ -27,7 +37,6 @@ div.my-footer {
 }
 
 div.my-footer span {
-  font-family: 'Lato', 'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif;
   font-size: 13pt;
   color: #ffffff;
   position: absolute;
@@ -45,24 +54,16 @@ div.my-footer span {
   color: #ffffff;
 }
 
-h1 {
-  color: #ffffff;
-  /*background-color: #0092ac;*/
-}
-
-h2 {
-  color: #1a81c2;
-}
-
 a, a > code {
-  color: #18bc9c;
-    text-decoration: none;
+  color: #EA8620;
+  text-decoration: none;
 }
 
 .small-p p {
   font-size: small;
 }
 
+/*
 p>.fa,
 p>.fas,
 p>.far,
@@ -76,25 +77,30 @@ li>.far,
 li>.fab {
   color: #336B87;
 }
+*/
 
 .title-slide>h1 {
   color: #ffffff;
   background-color: #336B87;
   position: static;
-  padding-left: 20px;
+  /*padding-left: 20px;*/
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .title-slide>h2 {
-  color: #1a81c2;
-    padding-left: 20px;
+  color: #336B87;
+  /*padding-left: 20px;*/
+  padding-top: 10px;
 }
 
 .title-slide>h3 {
-  padding-left: 20px;
+  /*padding-left: 20px;*/
 }
 
 hr,.title-slide h2::after,
 .mline h1::after {
-  background-color: #336B87;
-    color: #336B87;
+  background-color: #EA8620;
 }
+

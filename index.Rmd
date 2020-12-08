@@ -1,12 +1,12 @@
 ---
-title: 'My Bioconductor Topic'
-subtitle: 'Bioconductor Meeting'
-author: '[Author](https://author.github.io)'
-institute: ''
-date: 'YYYY-MM-DD'
+title: "**POMA** <br> _<font style='font-size:28px'>An User-friendly Workflow for Pre-processing and Statistical Analysis of Mass Spectrometry Data</font>_" 
+subtitle: "European _Bioconductor_ Meeting 2020"
+author: "**Pol Castellano-Escuder**"
+institute: "University of Barcelona"
+date: "Dec 18, 2020"
 output:
   xaringan::moon_reader:
-    css: [default, metropolis, useR-fonts, "mycss.css"]
+    css: [default, metropolis, "mycss.css"]
     lib_dir: libs
     nature:
       highlightStyle: github
@@ -20,9 +20,9 @@ layout: true
 <div class="my-header"><img src="img/logo.png" alt="logo" align="right" height="90%"></div>
 
 <div class="my-footer"><span>
-@polcastellano_
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!--&emsp;&emsp;&emsp;&emsp;&emsp;-->
-POMA R/Bioconductor package
+<a href="https://twitter.com/polcastellano_" style="color:white">@polcastellano_</a>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!--&emsp;-->
+#EuroBioc2020
 </span></div>
 
 ```{r setup, include = FALSE}
@@ -39,4 +39,5 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 # Title
 
 Content.
+
 
