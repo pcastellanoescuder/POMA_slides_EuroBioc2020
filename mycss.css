@@ -1,12 +1,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
-h1, h2, h3 {
+h1 {
     font-family: 'Ubuntu', sans-serif;
     color: #ffffff;
 }
 
-body {
+h2, h3, body {
     font-family: 'Ubuntu', sans-serif;
 }
 
@@ -102,5 +102,17 @@ li>.fab {
 hr,.title-slide h2::after,
 .mline h1::after {
   background-color: #EA8620;
+}
+
+/*COLUMNS*/
+
+.columnwide {
+  float: left;
+  width: 65%;
+}
+
+.columnnarrow {
+  float: left;
+  width: 35%;
 }
 
