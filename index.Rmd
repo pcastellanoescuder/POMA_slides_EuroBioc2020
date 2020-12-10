@@ -58,26 +58,24 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 # Scope of POMA
 
 .center[
-POMA package focuses on <u>**statistical analysis**</u> of metabolomics and proteomics
+.textbox[`POMA` package focuses on <u>**statistical analysis**</u> of metabolomics and proteomics]
 ]
 
 --
 
-  1) Directly from sheet (xlsx, csv, etc.)
+  1) Directly from sheet (xlsx, csv, etc.) &#10060;&#10060;
   
 --
   
-  2) Ex
+  2) Extracting quantitative data from `MSnbase::MSnSet` objects &#10060;
 
 --
 
-  3) Using `MSnbase::MSnSet` objects directly
+  3) Using `MSnbase::MSnSet` objects directly (++ reproducibility and interoperability) &#9989;
 
 --
 
-<img align = "left" src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/mzR/mzR.png" height="200">
-
-<br><br>
-
-<img align = "left" src="https://raw.githubusercontent.com/Bioconductor/BiocStickers/master/MSnbase/MSnbase.png" height="200">
+.center[
+<img align = "center" src="img/figure1.png" width = "80%">
+]
 
