@@ -79,3 +79,41 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 <img align = "center" src="img/figure1.png" width = "80%">
 ]
 
+---
+
+# POMA workflow
+
+.columnnarrow2[
+.center[
+
+## Data formatting
+
+]]
+
+--
+
+.columnnarrow2[
+.center[
+
+## Pre-processing
+
+]]
+
+--
+
+.columnnarrow2[
+.center[
+
+## EDA
+
+]]
+
+--
+
+.columnnarrow2[
+.center[
+
+## Statistical analysis
+
+]]
+
