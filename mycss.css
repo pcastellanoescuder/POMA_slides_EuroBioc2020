@@ -127,3 +127,10 @@ hr,.title-slide h2::after,
   margin: 0;
 }
 
+.textboxorange-big {
+  padding: 10px;
+  border: 2px solid orange;
+  margin: 0;
+  height: 2000px;
+}
+

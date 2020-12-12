@@ -245,15 +245,51 @@ clean_object %&gt;%
 
 # POMA workflow: 4) Statistical analysis
 
-.center[
-.textboxorange[All functions ]
-]
+#### Statistical methods covered by `POMA`:
 
-All type of analysis
+--
+
+  - **Univariate analysis:** T-test, ANOVA, ANCOVA, Wilcoxon rank-sum test, and Kruskal Wallis
+
+--
+
+  - **Multivariate analysis:** PCA, PLS-DA, and sPLS-DA
+
+--
+
+  - **Cluster analysis:** _k_-means (clusters projected in a MDS plot)
+
+--
+
+  - **Limma:** Both designs with and without covariates (from `limma` Bioconductor package)
+
+--
+
+  - **Correlation analysis:** Pairwise correlations, correlogram, network correlations and Gaussian Graphical Models
+
+--
+
+  - **Regularization methods:** LASSO, Ridge regression, and Elasticnet (**allow train/test split**)
+
+--
+
+  - **Random forest:** Classical Random forest algorithm (**allow train/test split**)
+
+--
+
+  - **Rank products:** From `RankProd` Bioconductor package
+
+--
+
+  - **Odds ratios:** Based on a logistic regression model (two-group analysis)
 
 ---
 
 # POMA workflow: 4) Statistical analysis
+
+.center[
+.textboxorange-big[All `POMA` functions are focused on simplifying and compacting analysis, grouping different methodologies of the same class within a single function instead of maintaining "single purpose" functions]
+]
 
 ---
 
@@ -265,13 +301,13 @@ All type of analysis
 
 # POMA workflow: 4) Statistical analysis
 
-**Example: From raw data to _limma_ model adjusted for covariates**
+**"Top-down" example: From raw data to _limma_ model adjusted for covariates**
 
 
 
 
 ```r
-raw_MSnSet_ data %&gt;% 
+raw_MSnSet_data %&gt;% 
   PomaImpute(method = "knn") %&gt;%
   PomaNorm(method = "log_pareto") %&gt;% 
   PomaOutliers(do = "clean") %&gt;%
