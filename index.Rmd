@@ -108,7 +108,7 @@ htmltools::tagList(rmarkdown::html_dependency_font_awesome())
 
 ```{r, eval = FALSE}
 # create MSnSet object from target and features data frames
-POMA::PomaMSnSetClass(tatget = "target", features = "features")
+msnset_object <- PomaMSnSetClass(tatget = "target", features = "features")
 ```
 
 ---
@@ -187,10 +187,76 @@ A clean `MSnSet` object
 
 # POMA workflow: 3) EDA
 
+.center[
+.textboxorange[Include several flexible visualization options such as boxplots, density plots, heatmaps, etc.]
+]
+
+### Boxplot examples:
+
+.pull-left[
+
+Display samples:
+
+```{r, echo = FALSE, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE}
+clean_object <- st000336 %>% 
+  PomaImpute(method = "knn") %>%
+  PomaNorm(method = "log_pareto")
+```
+
+```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
+clean_object %>%
+  PomaBoxplots(group = "samples",
+               label_size = 5)
+```
+
+]
+
+.pull-right[
+
+Display features:
+
+```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
+clean_object %>%
+  PomaBoxplots(group = "features")
+```
+
+]
+
+---
+
+# POMA workflow: 3) EDA
+
+### Boxplot examples:
+
+Display features of interest:
+
+```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4, fig.align = "center"}
+clean_object %>%
+  PomaBoxplots(group = "features",
+               feature_name = c("isoleucine", "leucine", "lysine")) #<<
+```
 
 ---
 
 # POMA workflow: 4) Statistical analysis
+
+All type of analysis
+
+---
+
+# POMA workflow: 4) Statistical analysis
+
+## bla bla
+
+---
+
+# POMA workflow: 4) Statistical analysis
+
+## Predictive features
+
+---
+
+# Next steps...
 
 
 

@@ -112,7 +112,7 @@ layout: true
 
 ```r
 # create MSnSet object from target and features data frames
-POMA::PomaMSnSetClass(tatget = "target", features = "features")
+msnset_object &lt;- PomaMSnSetClass(tatget = "target", features = "features")
 ```
 
 ---
@@ -185,10 +185,81 @@ A clean `MSnSet` object
 
 # POMA workflow: 3) EDA
 
+.center[
+.textboxorange[Include several flexible visualization options such as boxplots, density plots, heatmaps, etc.]
+]
+
+### Boxplot examples:
+
+.pull-left[
+
+Display samples:
+
+
+
+
+```r
+clean_object %&gt;%
+  PomaBoxplots(group = "samples",
+               label_size = 5)
+```
+
+![](index_files/figure-html/unnamed-chunk-8-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+
+Display features:
+
+
+```r
+clean_object %&gt;%
+  PomaBoxplots(group = "features")
+```
+
+![](index_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+
+]
+
+---
+
+# POMA workflow: 3) EDA
+
+### Boxplot examples:
+
+Display features of interest:
+
+
+```r
+clean_object %&gt;%
+  PomaBoxplots(group = "features",
+*              feature_name = c("isoleucine", "leucine", "lysine"))
+```
+
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # POMA workflow: 4) Statistical analysis
+
+All type of analysis
+
+---
+
+# POMA workflow: 4) Statistical analysis
+
+## bla bla
+
+---
+
+# POMA workflow: 4) Statistical analysis
+
+## Predictive features
+
+---
+
+# Next steps...
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
