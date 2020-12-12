@@ -154,7 +154,7 @@ msnset_object %>%
 
 Output:
 
-```{r, echo = FALSE, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
+```{r, echo = FALSE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
 library(POMA)
 library(patchwork)
 library(ggplot2)
@@ -179,7 +179,7 @@ msnset_object %>%
 
 Output:
 
-A clean `MSnSet` object
+A clean `MSnSet` object (without sample outliers)
 
 ]
 
@@ -197,15 +197,15 @@ A clean `MSnSet` object
 
 Display samples:
 
-```{r, echo = FALSE, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE}
+```{r, echo = FALSE, warning = FALSE, comment = FALSE, message = FALSE}
 clean_object <- st000336 %>% 
   PomaImpute(method = "knn") %>%
   PomaNorm(method = "log_pareto")
 ```
 
-```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
+```{r, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
 clean_object %>%
-  PomaBoxplots(group = "samples",
+  PomaBoxplots(group = "samples", #<<
                label_size = 5)
 ```
 
@@ -215,9 +215,9 @@ clean_object %>%
 
 Display features:
 
-```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
+```{r, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4}
 clean_object %>%
-  PomaBoxplots(group = "features")
+  PomaBoxplots(group = "features") #<<
 ```
 
 ]
@@ -230,7 +230,7 @@ clean_object %>%
 
 Display features of interest:
 
-```{r, cache = TRUE, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4, fig.align = "center"}
+```{r, warning = FALSE, comment = FALSE, message = FALSE, fig.height = 4, fig.align = "center"}
 clean_object %>%
   PomaBoxplots(group = "features",
                feature_name = c("isoleucine", "leucine", "lysine")) #<<
@@ -246,13 +246,38 @@ All type of analysis
 
 # POMA workflow: 4) Statistical analysis
 
-## bla bla
-
 ---
 
 # POMA workflow: 4) Statistical analysis
 
 ## Predictive features
+
+---
+
+# POMA workflow: 4) Statistical analysis
+
+**Example: From raw data to _limma_ model adjusted for covariates**
+
+```{r, echo = FALSE, warning = FALSE, comment = FALSE, message = FALSE}
+poma_results <- st000284 %>% 
+  PomaImpute(method = "knn") %>%
+  PomaNorm(method = "log_pareto") %>% 
+  PomaOutliers(do = "clean") %>%
+  PomaLimma(contrast = "CRC-Polyp", covariates = TRUE)
+```
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+raw_MSnSet_ data %>% 
+  PomaImpute(method = "knn") %>%
+  PomaNorm(method = "log_pareto") %>% 
+  PomaOutliers(do = "clean") %>%
+  PomaLimma(contrast = "CRC-Polyp", covariates = TRUE)
+```
+
+```{r, echo = FALSE, warning = FALSE, comment = FALSE, message = FALSE}
+kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
+  kableExtra::kable_styling(latex_options = c("striped", "scale_down"))
+```
 
 ---
 
