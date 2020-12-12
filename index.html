@@ -44,9 +44,10 @@ layout: true
 .columnwide[
   ### 1) Scope of the package
   ### 2) POMA workflow (with examples)
-  ### &amp;emsp; 2.1) Pre-processing
-  ### &amp;emsp; 2.2) Exploratory Data Analysis
-  ### &amp;emsp; 2.3) Statistical Analysis
+  ### &amp;emsp; 2.1) Data formatting
+  ### &amp;emsp; 2.2) Pre-processing
+  ### &amp;emsp; 2.3) Exploratory Data Analysis (EDA)
+  ### &amp;emsp; 2.4) Statistical Analysis
   ### 3) Next steps...
 ]
 
@@ -61,7 +62,7 @@ layout: true
 # Scope of POMA
 
 .center[
-.textbox[`POMA` package focuses on &lt;u&gt;**statistical analysis**&lt;/u&gt; of metabolomics and proteomics]
+.textboxorange[`POMA` package focuses on &lt;u&gt;**statistical analysis**&lt;/u&gt; of metabolomics and proteomics]
 ]
 
 --
@@ -84,41 +85,110 @@ layout: true
 
 ---
 
-# POMA workflow
+# POMA workflow: 1) Data formatting
 
-.columnnarrow2[
 .center[
+.textboxorange[The input format required in all `POMA` functions in a `MSnbase::MSnSet` object]
+]
 
-## Data formatting
+.pull-left[
 
-]]
+**Target or "_phenotype data_"**
+
+&lt;img align = "left" src="https://raw.github.com/pcastellanoescuder/POMAShiny/master/app/mds/pix/target.png" height="200"&gt;
+
+]
+
+.pull-right[
+
+**Features or "_expression data_"**
+
+&lt;img align = "left" src="https://raw.github.com/pcastellanoescuder/POMAShiny/master/app/mds/pix/features.png" height="200"&gt;
+
+]
+
+&lt;br&gt;
+
+
+```r
+# create MSnSet object from target and features data frames
+POMA::PomaMSnSetClass(tatget = "target", features = "features")
+```
+
+---
+
+# POMA workflow: 2) Pre-processing
+
+.center[
+.textboxorange[All `POMA` pre-processing methods return a pre-processed `MSnSet` object]
+]
+
+### 2.1) Missing value imputation
+
+
+```r
+msnset_object %&gt;% 
+  PomaImpute(ZerosAsNA = FALSE, # treat zeros as zeros instead of NAs
+             RemoveNA = TRUE, cutoff = 20, # remove columns with &gt;20% of NA
+             method = "knn") # k-nearest neighbors (default)
+```
 
 --
 
-.columnnarrow2[
-.center[
+### 2.2) Normalization
 
-## Pre-processing
 
-]]
+```r
+msnset_object %&gt;% 
+  PomaNorm(method = "log_pareto") # log Pareto scaling (default)
+```
 
---
+---
 
-.columnnarrow2[
-.center[
+# POMA workflow: 2) Pre-processing
 
-## EDA
+### 2.3) Outlier detection and cleaning
 
-]]
+.pull-left[
 
---
+Detection:
 
-.columnnarrow2[
-.center[
 
-## Statistical analysis
+```r
+msnset_object %&gt;% 
+*  PomaOutliers(do = "analyze")
+```
 
-]]
+Output:
+
+![](index_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+
+]
+
+.pull-right[
+
+Clean:
+
+
+```r
+msnset_object %&gt;% 
+*  PomaOutliers(do = "clean")
+```
+
+Output:
+
+A clean `MSnSet` object
+
+]
+
+---
+
+# POMA workflow: 3) EDA
+
+
+---
+
+# POMA workflow: 4) Statistical analysis
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
