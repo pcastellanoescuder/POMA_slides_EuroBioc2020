@@ -283,5 +283,23 @@ kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
 
 # Next steps...
 
+---
 
+class: inverse, center, middle
+
+<div class="my-footer"></div>
+
+# Thank you all and welcome to contribute!
+
+**[Statistics and Bioinformatics Research Group](https://sites.google.com/view/estbioinfo/home)** <span style="color:#ffffff">and</span> **[Biomarkers and Nutritional & Food Metabolomics Research Group](http://www.nutrimetabolomics.com/)** <span style="color:#ffffff">from</span> **[University of Barcelona](https://www.ub.edu/web/ub/en/index.html?)**      
+
+<span style="color:#ffffff">Slides available at</span> [https://github.com/pcastellanoescuder/POMA_slides_EuroBioc2020](https://github.com/pcastellanoescuder/POMA_slides_EuroBioc2020)
+
+<html><div style='float:left'></div><hr color='#f38620' size=1px width=720px></html> 
+
+<a href="mailto:polcaes@gmail.com"><i class="fas fa-envelope"></i>&nbsp; polcaes@gmail.com</a><br>
+<a href="https://pcastellanoescuder.github.io/"><i class="fas fa-link"></i>&nbsp; pcastellanoescuder.github.io</a><br>
+<a href="http://twitter.com/polcastellano_"><i class="fab fa-twitter"></i>&nbsp; @polcastellano_</a><br>
+<a href="https://github.com/pcastellanoescuder"><i class="fab fa-github"></i>&nbsp; @pcastellanoescuder</a><br>
+<a href="https://www.ub.edu/web/ub/en/index.html?"><i class="fas fa-map-marker-alt"></i>&nbsp; University of Barcelona</a>
 

@@ -67,6 +67,16 @@ a, a > code {
   font-size: small;
 }
 
+.inverse {
+  background-color: #336B87;
+  text-shadow: none;
+}
+
+.title-slide {
+  background-color: #ffffff;
+  border-top: 80px solid #ffffff;
+}
+
 .title-slide>h1 {
   color: #ffffff;
   background-color: #336B87;
