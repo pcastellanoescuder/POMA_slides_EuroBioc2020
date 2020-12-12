@@ -21,7 +21,7 @@ layout: true
 
 <div class="my-footer"><span>
 <a href="https://twitter.com/polcastellano_" style="color:white">@polcastellano_</a>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<!--&emsp;-->
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 #EuroBioc2020
 </span></div>
 
@@ -240,6 +240,10 @@ clean_object %>%
 
 # POMA workflow: 4) Statistical analysis
 
+.center[
+.textboxorange[All functions ]
+]
+
 All type of analysis
 
 ---
@@ -279,6 +283,17 @@ kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
   kableExtra::kable_styling(latex_options = c("striped", "scale_down"))
 ```
 
+---
+
+# POMA Shiny version
+
+.center[
+<img align = "center" src="img/pomashiny.png" width="750">
+]
+
+<a href="https://github.com/pcastellanoescuder/POMAShiny"><i class="fab fa-github"></i>&nbsp; https://github.com/pcastellanoescuder/POMAShiny</a>
+<br>
+<a href="https://webapps.nutrimetabolomics.com/POMAShiny"><i class="fas fa-link"></i>&nbsp; https://webapps.nutrimetabolomics.com/POMAShiny</a>
 ---
 
 # Next steps...
