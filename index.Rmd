@@ -244,7 +244,7 @@ clean_object %>%
 
 --
 
-  - **Univariate analysis:** T-test, ANOVA, ANCOVA, Wilcoxon rank-sum test, and Kruskal Wallis
+  - **Univariate analysis:** T-test, ANOVA, ANCOVA, Wilcoxon test, and Kruskal Wallis
 
 --
 
@@ -256,7 +256,7 @@ clean_object %>%
 
 --
 
-  - **Limma:** Both designs with and without covariates (from `limma` Bioconductor package)
+  - **Limma:** Both designs with and without covariates (from `limma` _Bioconductor_ package)
 
 --
 
@@ -264,7 +264,7 @@ clean_object %>%
 
 --
 
-  - **Regularization methods:** LASSO, Ridge regression, and Elasticnet (**allow train/test split**)
+  - **Regularization methods:** LASSO, Ridge, and Elasticnet (**allow train/test split**)
 
 --
 
@@ -272,7 +272,7 @@ clean_object %>%
 
 --
 
-  - **Rank products:** From `RankProd` Bioconductor package
+  - **Rank products:** From `RankProd` _Bioconductor_ package
 
 --
 
@@ -334,6 +334,16 @@ kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
 
 # Next steps...
 
+  - Implementation of more functions and methods focusing mainly on multivariate approaches
+
+--
+
+  - Explore the feasibility of a new _Bioconductor_ class to store the statistical analysis results, or extend an existing _Bioconductor_ class for this purpose (community feedback and collaborations are indispensable)
+  
+--
+
+  - Gradually migrate the `MSnbase::MSnSet` structures used by `POMA` to the `QFeatures` structures for mass spectrometry assays included in `QFeatures` package
+  
 ---
 
 class: inverse, center, middle
