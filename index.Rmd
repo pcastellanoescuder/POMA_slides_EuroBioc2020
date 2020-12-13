@@ -283,7 +283,19 @@ clean_object %>%
 # POMA workflow: 4) Statistical analysis
 
 .center[
-.textboxorange-big[All `POMA` functions are focused on simplifying and compacting analysis, grouping different methodologies of the same class within a single function instead of maintaining "single purpose" functions]
+All `POMA` functions are focused on <u>**simplifying and compacting**</u> the analyses, grouping different methodologies of the same class within a single function instead of maintaining many "single purpose" functions
+]
+
+.pull-left[
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+clean_object %>% 
+  PomaImpute(method = "knn") %>%
+  PomaNorm(method = "log_pareto") %>% 
+  PomaOutliers(do = "clean") %>%
+  PomaLimma(contrast = "CRC-Polyp", covariates = TRUE)
+```
+
 ]
 
 ---
