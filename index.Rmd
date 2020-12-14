@@ -333,7 +333,47 @@ clean_object %>%
 
 # POMA workflow: 4) Statistical analysis
 
-## Predictive features
+.center[
+`POMA` predictive features allow users to split data into random _train_ and _test_ sets in order to perform an <u>**external cross-validation**</u>
+]
+
+.pull-left[
+
+**Regularization methods**
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+clean_object %>%
+  PomaLasso(alpha = 1, ntest = NULL)
+```
+
+]
+
+--
+
+.pull-right[
+
+**Random forest**
+
+20% of data used as _test_ set
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = TRUE, echo = FALSE}
+rf_res <- st000284 %>%
+  PomaNorm(method = "log_pareto") %>%
+  PomaRandForest(ntest = 20)
+```
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+clean_object %>%
+  PomaRandForest(ntree = 500,
+                 ntest = 20) #<<
+```
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = TRUE, echo = FALSE}
+kableExtra::kbl(rf_res$confusion_matrix, booktabs = TRUE) %>%
+  kableExtra::kable_styling(latex_options = c("striped", "scale_down"))
+```
+
+]
 
 ---
 

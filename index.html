@@ -340,7 +340,75 @@ clean_object %&gt;%
 
 # POMA workflow: 4) Statistical analysis
 
-## Predictive features
+.center[
+`POMA` predictive features allow users to split data into random _train_ and _test_ sets in order to perform an &lt;u&gt;**external cross-validation**&lt;/u&gt;
+]
+
+.pull-left[
+
+**Regularization methods**
+
+
+```r
+clean_object %&gt;%
+  PomaLasso(alpha = 1, ntest = NULL)
+```
+
+]
+
+--
+
+.pull-right[
+
+**Random forest**
+
+20% of data used as _test_ set
+
+
+
+
+```r
+clean_object %&gt;%
+  PomaRandForest(ntree = 500,
+*                ntest = 20)
+```
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; CRC &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Healthy &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Polyp &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; class.error &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; CRC &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4118 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Healthy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5455 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Polyp &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 12 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.7500 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
 
 ---
 
