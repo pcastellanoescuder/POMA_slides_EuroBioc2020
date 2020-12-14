@@ -299,19 +299,17 @@ All `POMA` functions are focused on &lt;u&gt;**simplifying and compacting**&lt;/
 
 
 ```r
+clean_object %&gt;%
+  
 # parametric methods
-clean_object %&gt;% 
-  PomaUnivariate(method="ttest")
+PomaUnivariate(method = "ttest")
 
-clean_object %&gt;% 
-  PomaUnivariate(method="anova")
+PomaUnivariate(method = "anova")
 
 # non-parametric methods
-clean_object %&gt;% 
-  PomaUnivariate(method="mann")
+PomaUnivariate(method = "mann")
 
-clean_object %&gt;% 
-  PomaUnivariate(method="kruskal")
+PomaUnivariate(method = "kruskal")
 ```
 
 ]
@@ -325,13 +323,12 @@ clean_object %&gt;%
 
 ```r
 clean_object %&gt;% 
-  PomaMultivariate(method="pca")
+  
+PomaMultivariate(method = "pca")
 
-clean_object %&gt;% 
-  PomaUnivariate(method="plsda")
+PomaUnivariate(method = "plsda")
 
-clean_object %&gt;% 
-  PomaUnivariate(method="splsda")
+PomaUnivariate(method = "splsda")
 ```
 
 ]
@@ -343,6 +340,8 @@ clean_object %&gt;%
 .center[
 `POMA` predictive features allow users to split data into random _train_ and _test_ sets in order to perform an &lt;u&gt;**external cross-validation**&lt;/u&gt; (CV)
 ]
+
+--
 
 .pull-left[
 
