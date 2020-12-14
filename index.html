@@ -50,7 +50,8 @@ POMA
   ### &amp;emsp; 2.2) Pre-processing
   ### &amp;emsp; 2.3) Exploratory Data Analysis (EDA)
   ### &amp;emsp; 2.4) Statistical Analysis
-  ### 3) Next steps...
+  ### 3) Conclusions
+  ### 4) Next steps...
 ]
 
 .columnnarrow[
@@ -78,8 +79,6 @@ POMA
 --
 
   3) Using `MSnbase::MSnSet` objects directly (++ reproducibility and interoperability) &amp;#9989;
-
---
 
 .center[
 &lt;img align = "center" src="img/figure1.png" width = "80%"&gt;
@@ -114,7 +113,8 @@ POMA
 
 ```r
 # create MSnSet object from target and features data frames
-msnset_object &lt;- PomaMSnSetClass(tatget = "target", features = "features")
+msnset_object &lt;- PomaMSnSetClass(tatget = "target", 
+                                 features = "features")
 ```
 
 ---
@@ -181,6 +181,16 @@ Output:
 
 A clean `MSnSet` object (without sample outliers)
 
+]
+
+---
+
+# POMA workflow: 2) Pre-processing
+
+&lt;u&gt;**Pre-processing output**:&lt;/u&gt;
+
+.center[
+&lt;img align = "center" src="img/pre_processing.png" height="400"&gt;
 ]
 
 ---
@@ -506,20 +516,53 @@ raw_MSnSet_data %&gt;%
 &lt;a href="https://github.com/pcastellanoescuder/POMAShiny"&gt;&lt;i class="fab fa-github"&gt;&lt;/i&gt;&amp;nbsp; https://github.com/pcastellanoescuder/POMAShiny&lt;/a&gt;
 &lt;br&gt;
 &lt;a href="https://webapps.nutrimetabolomics.com/POMAShiny"&gt;&lt;i class="fas fa-link"&gt;&lt;/i&gt;&amp;nbsp; https://webapps.nutrimetabolomics.com/POMAShiny&lt;/a&gt;
+
+---
+
+# Conclusions
+
+.font130[
+  - POMA provides a &lt;span style="color:#f38620"&gt;**robust**&lt;/span&gt;, &lt;span style="color:#f38620"&gt;**reproducible**&lt;/span&gt;, and &lt;span style="color:#f38620"&gt;**user-friendly**&lt;/span&gt; workflow for the statistical analysis of mass spectrometry data
+]
+
+--
+
+.font130[
+  - POMA allows users to include different &lt;span style="color:#f38620"&gt;**covariates**&lt;/span&gt; in the analysis
+]
+
+--
+
+.font130[
+  - POMA also provides its own interactive Shiny version called &lt;span style="color:#f38620"&gt;**POMAShiny**&lt;/span&gt;
+]
+
+--
+
+.font130[
+  - POMA is an &lt;span style="color:#f38620"&gt;**open source**&lt;/span&gt; tool and everybody is &lt;span style="color:#f38620"&gt;**welcome to contribute**&lt;/span&gt;!
+]
+
 ---
 
 # Next steps...
 
+.font130[
   - Implementation of more functions and methods focusing mainly on multivariate approaches
+]
 
 --
 
+.font130[
   - Explore the feasibility of a new _Bioconductor_ class to store the statistical analysis results, or extend an existing _Bioconductor_ class for this purpose (community feedback and collaborations are indispensable)
-  
+]
+
 --
 
+.font130[
   - Gradually migrate the `MSnbase::MSnSet` structures used by `POMA` to the `QFeatures` structures for mass spectrometry assays included in `QFeatures` package
-  
+]
+
 ---
 
 class: inverse, center, middle
