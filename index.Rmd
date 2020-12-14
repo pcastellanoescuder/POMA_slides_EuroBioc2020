@@ -21,8 +21,8 @@ layout: true
 
 <div class="my-footer"><span>
 <a href="https://twitter.com/polcastellano_" style="color:white">@polcastellano_</a>
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-#EuroBioc2020
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+POMA
 </span></div>
 
 ```{r setup, include = FALSE}
@@ -286,17 +286,52 @@ clean_object %>%
 All `POMA` functions are focused on <u>**simplifying and compacting**</u> the analyses, grouping different methodologies of the same class within a single function instead of maintaining many "single purpose" functions
 ]
 
+--
+
 .pull-left[
 
+**Univariate analysis: 1 function, 4 methods**
+
 ```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+# parametric methods
 clean_object %>% 
-  PomaImpute(method = "knn") %>%
-  PomaNorm(method = "log_pareto") %>% 
-  PomaOutliers(do = "clean") %>%
-  PomaLimma(contrast = "CRC-Polyp", covariates = TRUE)
+  PomaUnivariate(method="ttest")
+
+clean_object %>% 
+  PomaUnivariate(method="anova")
+
+# non-parametric methods
+clean_object %>% 
+  PomaUnivariate(method="mann")
+
+clean_object %>% 
+  PomaUnivariate(method="kruskal")
 ```
 
 ]
+
+--
+
+.pull-right[
+
+**Multivariate analysis: 1 function, 3 methods**
+
+```{r, warning = FALSE, comment = FALSE, message = FALSE, eval = FALSE}
+clean_object %>% 
+  PomaMultivariate(method="pca")
+
+clean_object %>% 
+  PomaUnivariate(method="plsda")
+
+clean_object %>% 
+  PomaUnivariate(method="splsda")
+```
+
+]
+
+--
+
+If the method provides different tables and plots, then the output will be a list of all these objects
 
 ---
 

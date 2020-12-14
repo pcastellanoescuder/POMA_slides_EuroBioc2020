@@ -31,8 +31,8 @@ layout: true
 
 &lt;div class="my-footer"&gt;&lt;span&gt;
 &lt;a href="https://twitter.com/polcastellano_" style="color:white"&gt;@polcastellano_&lt;/a&gt;
-&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
-#EuroBioc2020
+&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;&amp;emsp;
+POMA
 &lt;/span&gt;&lt;/div&gt;
 
 
@@ -290,6 +290,55 @@ clean_object %&gt;%
 .center[
 All `POMA` functions are focused on &lt;u&gt;**simplifying and compacting**&lt;/u&gt; the analyses, grouping different methodologies of the same class within a single function instead of maintaining many "single purpose" functions
 ]
+
+--
+
+.pull-left[
+
+**Univariate analysis: 1 function, 4 methods**
+
+
+```r
+# parametric methods
+clean_object %&gt;% 
+  PomaUnivariate(method="ttest")
+
+clean_object %&gt;% 
+  PomaUnivariate(method="anova")
+
+# non-parametric methods
+clean_object %&gt;% 
+  PomaUnivariate(method="mann")
+
+clean_object %&gt;% 
+  PomaUnivariate(method="kruskal")
+```
+
+]
+
+--
+
+.pull-right[
+
+**Multivariate analysis: 1 function, 3 methods**
+
+
+```r
+clean_object %&gt;% 
+  PomaMultivariate(method="pca")
+
+clean_object %&gt;% 
+  PomaUnivariate(method="plsda")
+
+clean_object %&gt;% 
+  PomaUnivariate(method="splsda")
+```
+
+]
+
+--
+
+If the method provides different tables and plots, then the output will be a list of all these objects
 
 ---
 
