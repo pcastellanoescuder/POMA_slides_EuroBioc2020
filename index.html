@@ -341,17 +341,27 @@ clean_object %&gt;%
 # POMA workflow: 4) Statistical analysis
 
 .center[
-`POMA` predictive features allow users to split data into random _train_ and _test_ sets in order to perform an &lt;u&gt;**external cross-validation**&lt;/u&gt;
+`POMA` predictive features allow users to split data into random _train_ and _test_ sets in order to perform an &lt;u&gt;**external cross-validation**&lt;/u&gt; (CV)
 ]
 
 .pull-left[
 
-**Regularization methods**
+LASSO for **feature selection**: All data used to create the model and no _test_ set created 
 
 
 ```r
 clean_object %&gt;%
-  PomaLasso(alpha = 1, ntest = NULL)
+  PomaLasso(alpha = 1, # LASSO
+*           ntest = NULL)
+```
+
+Ridge regression for **predictive modeling**: External CV using the 20% of the data as _test_ set
+
+
+```r
+clean_object %&gt;%
+  PomaLasso(alpha = 0, # Ridge
+*           ntest = 20)
 ```
 
 ]
@@ -360,9 +370,7 @@ clean_object %&gt;%
 
 .pull-right[
 
-**Random forest**
-
-20% of data used as _test_ set
+Random forest for **predictive modeling**: External CV using the 20% of the data as _test_ set
 
 
 
