@@ -329,9 +329,9 @@ clean_object %>%
   
 PomaMultivariate(method = "pca")
 
-PomaUnivariate(method = "plsda")
+PomaMultivariate(method = "plsda")
 
-PomaUnivariate(method = "splsda")
+PomaMultivariate(method = "splsda")
 ```
 
 ]
@@ -434,6 +434,8 @@ kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
 
 # Conclusions
 
+--
+
 .font130[
   - POMA provides a <span style="color:#f38620">**robust**</span>, <span style="color:#f38620">**reproducible**</span>, and <span style="color:#f38620">**user-friendly**</span> workflow for the statistical analysis of mass spectrometry data
 ]
@@ -459,6 +461,8 @@ kableExtra::kbl(poma_results[1:5 ,], booktabs = TRUE) %>%
 ---
 
 # Next steps...
+
+--
 
 .font130[
   - Implementation of more functions and methods focusing mainly on multivariate approaches
